@@ -211,9 +211,13 @@ class App(ctk.CTk):
     # Voir ÉNONCÉ
 
     def creer_resume(self):
+        cpt=0
         valeur = self.cbo_interet.get()
-        valeur2 = self.list_checkbox
-        return valeur
+        for box in self.list_checkbox:
+            if box.get() == 1:
+                cpt += 1
+        nom = self.ent_nom.get()
+        return (f"Salut {nom} \n Merci de votre application chez nous \n Vous avez de l'expérience dans {cpt} point sur 12 possibles \n L'intéret principal mentioné étant: {valeur} \n Nous vous donnerons une réponse sous peu")
 if __name__ == "__main__":
     app = App()
     # Used to run the application
